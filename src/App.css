@@ -18,7 +18,7 @@ body {
   margin: 0;
   background-color: rgb(7, 85, 41);
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
 }
 .header_container {
   display: grid;
@@ -43,6 +43,11 @@ body {
   right: 1em;
   transform: rotate(0deg);
   cursor: pointer;
+}
+@media (min-width: 49em) {
+  .nav_icon {
+    display: none;
+  }
 }
 .nav_icon > span {
   display: block;
@@ -78,9 +83,32 @@ body {
   z-index: 100;
   border-radius: 10px;
 }
+@media (min-width: 49em) {
+  .menu_container {
+    background-color: transparent;
+    transform: translateX(0rem);
+  }
+  .menu_container .menu {
+    flex-flow: row;
+    top: -2.8rem;
+    justify-content: flex-end;
+    transition: none;
+  }
+  .menu_container .menu li {
+    padding: 0 2rem 0 2rem;
+  }
+  .menu_container .menu li a {
+    margin-left: 0.5em;
+    padding: 0.5rem;
+  }
+  .menu_container.is-open .menu {
+    transform: none;
+  }
+}
 .menu_container.is-open {
   transform: translateX(0rem);
 }
+
 .menu {
   list-style: none;
   display: flex;
@@ -132,7 +160,6 @@ body {
   color: white;
   padding: 0.5rem 1rem;
 }
-
 .sub_hero {
   background-color: white;
   margin-top: 4rem;
@@ -146,24 +173,40 @@ body {
 .translate_img img {
   width: 100%;
 }
-
 .collection_container {
   background-color: white;
   margin: 0em auto;
   width: 100%;
   display: block;
+  color: black;
 }
+.collection_container h2 {
+  padding: 1rem 0 1rem 1rem;
+}
+@media (min-width: 48em) {
+  .collection_container .collection_img {
+    width: 98%;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .img_span {
+    margin-right: 0.4rem;
+  }
+}
+
 .collection_img img {
   margin: 0 auto;
   width: 100%;
-  height: 300px;
 }
 .collection_img {
   color: black;
-  width: 80%;
+  width: 98%;
   margin: 0em auto;
   display: grid;
-  gap: 15px;
+  gap: 5px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .img_box :nth-child(3) {
@@ -175,6 +218,28 @@ body {
   background-color: rgb(247, 186, 74);
   color: black;
 }
+@media (min-width: 30em) {
+  .feature .h3_feature {
+    margin-bottom: 1rem;
+
+    text-align: left;
+  }
+  .feature .feature_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature .feature_text {
+    text-align: left;
+  }
+  .feature .feature_img {
+    background-color: transparent;
+    padding-bottom: 2rem;
+    border-radius: 44% 56% 61% 39% / 20% 67% 33% 80%;
+  }
+  .feature .feature_price {
+    margin-bottom: 9rem;
+  }
+}
 .h3_feature {
   padding-left: 10%;
 }
@@ -184,6 +249,7 @@ body {
   text-align: left;
   letter-spacing: 0.7px;
 }
+
 .feature_text button {
   padding: 0.5rem 2rem;
   margin-top: 1em;
@@ -194,10 +260,10 @@ body {
 }
 
 .feature_img {
-  margin-top: 1rem;
   width: 80%;
   position: relative;
   margin: auto;
+  border-radius: 44% 56% 61% 39% / 20% 67% 33% 80%;
 }
 .feature_price {
   background-color: rgb(7, 85, 41);
@@ -212,9 +278,16 @@ body {
 }
 .join_planthome {
   position: relative;
-  padding: 2rem;
-  text-align: left;
+  padding: 4rem 1rem;
   font-size: 1.1rem;
+  display: flex;
+  flex-flow: column;
+}
+@media (min-width: 48em) {
+  .join_planthome {
+    width: 65%;
+    margin: 0 auto;
+  }
 }
 .join_planthome_input {
   padding-top: 1em;
@@ -227,7 +300,8 @@ body {
   outline: none;
   background-color: transparent;
   border-bottom: 2px solid #ccc;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: white;
 }
 ::placeholder {
   color: rgb(228, 225, 225);
@@ -236,14 +310,15 @@ body {
   border: 0;
   background-color: transparent;
   color: white;
-  position: absolute;
-  bottom: 3.4em;
-  right: 2.5rem;
   font-size: 14px;
+  outline: none;
+  float: right;
+  margin-right: 10%;
+  margin-top: 2rem;
 }
 footer {
   background-color: white;
-  padding: 1rem;
+  padding: 1rem 0.3rem;
 }
 .foot {
   display: flex;
@@ -258,7 +333,7 @@ footer {
 .footer_grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 5px;
+  gap: 12px;
   padding: 0.6rem;
 }
 .footer_links {
@@ -275,7 +350,7 @@ footer h3 {
 .footer_grid_2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
+  width: 98%;
   padding-top: 1.5rem;
   margin: 0 auto;
 }

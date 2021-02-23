@@ -1,15 +1,16 @@
 import React from "react";
-import featured from "../img/featured.jpeg";
 import logo from "../img/sunflower2.png";
 
-import img1 from "../img/img1.jpeg";
-import img2 from "../img/img2.jpg";
-import img9 from "../img/img9.jpeg";
-import img4 from "../img/img4.webp";
-import img5 from "../img/img5.jpeg";
-import img6 from "../img/img6.jpeg";
-import img7 from "../img/img7.jpeg";
-import img8 from "../img/img8.webp";
+import img1 from "../img/flower1-small (1).jpg";
+import img2 from "../img/flower2-small (1).jpg";
+import img3 from "../img/flower3-small (1).jpg";
+import img7 from "../img/flower7-small (1).jpg";
+import img8 from "../img/flower8-small (1).jpg";
+import img10 from "../img/flower10-small (1).jpg";
+import img11 from "../img/flower11-small (1).jpg";
+import img13 from "../img/img8.webp";
+import hero from "../img/flower12-extraLarge (1).jpg";
+import img4 from "../img/flower4-small (1).jpg";
 
 export const Content = () => {
   const handleNav = () => {
@@ -41,16 +42,16 @@ export const Content = () => {
       <div className='menu_container'>
         <ul className='menu'>
           <li>
-            <a href='/#'>Home</a>{" "}
+            <a href='#'>Home</a>{" "}
           </li>
           <li>
-            <a href='/#'>Plants</a>{" "}
+            <a href='#plant'>Plants</a>{" "}
           </li>
           <li>
-            <a href='/#'>Collections</a>{" "}
+            <a href='#collection'>Collections</a>{" "}
           </li>
           <li>
-            <a href='/#'>Contact</a>{" "}
+            <a href='#contact'>Contact</a>{" "}
           </li>
         </ul>
       </div>
@@ -69,13 +70,12 @@ export const Content = () => {
         </div>
         <div className='sub_hero'>
           <div className='translate_img'>
-            <img src={img8} alt='img' />
+            <img src={hero} alt='img' />
           </div>
         </div>
       </section>
-      <hr></hr>
-      <div className='collection_container'>
-        <h3>Collections</h3>
+      <div className='collection_container' id='collection'>
+        <h2 className='collection_text'>Collections</h2>
 
         <div className='collection_img'>
           <div>
@@ -87,7 +87,7 @@ export const Content = () => {
             <p>Live Plants</p>
           </div>
           <div>
-            <img src={img5} alt='flowers' />
+            <img src={img3} alt='flowers' />
             <p>Best sellers</p>
           </div>
           <div>
@@ -96,37 +96,37 @@ export const Content = () => {
           </div>
         </div>
       </div>
-      <div className='collection_container'>
-        <h3>Best Sellers</h3>
+      <div className='collection_container' id='plant'>
+        <h2>Best Sellers</h2>
 
         <div className='collection_img'>
           <div className='img_box'>
-            <img src={img9} alt='flowers' />
-            <span>
-              Mimosa Pundica <i className='fas fa-long-arrow-alt-right'></i>
+            <img src={img11} alt='flowers' />
+            <span className='img_span'>
+              Mimsa Pudica <i className='fas fa-long-arrow-alt-right'></i>
             </span>
-            <span> $160 </span>
+            <span className='img_span'> $160 </span>
           </div>
           <div className='img_box'>
             <img src={img4} alt='flowers' />
-            <span>
+            <span className='img_span'>
               Philodendron <i className='fas fa-long-arrow-alt-right'></i>
             </span>
-            <span> $60 </span>
+            <span className='img_span'> $60 </span>
           </div>
           <div className='img_box'>
-            <img src={img6} alt='flowers' />
-            <span>
+            <img src={img13} alt='flowers' />
+            <span className='img_span'>
               Plant parent <i className='fas fa-long-arrow-alt-right'></i>
             </span>
-            <span> $90 </span>
+            <span className='img_span'> $90 </span>
           </div>
           <div className='img_box'>
-            <img src={img7} alt='flowers' />
-            <span>
+            <img src={img8} alt='flowers' />
+            <span className='img_span'>
               Monstra Deliciosa <i className='fas fa-long-arrow-alt-right'></i>
             </span>
-            <span> $30 </span>
+            <span className='img_span'> $30 </span>
           </div>
         </div>
       </div>
@@ -138,13 +138,19 @@ export const Content = () => {
             <p>
               Potted Bamboo palm brings color and warmth to any room in the
               house. Unlike most plants that needs direct light to thrive, these
-              will grow even in low light conditions. Although thry will grow
-              fuller with more light.
+              will grow even in low light conditions. Although they will grow
+              fuller with more light. It is often grown for its curiosity value:
+              the compound leaves fold inward and droop when touched or shaken.
+              The species is native to South and Central America, but it is now
+              a pantropical plant and can be found in Southern United State. It
+              is well known for it rapid plant movement. Like a number of other
+              plants species, it undergoes changes in leaf orientation termed
+              "sleep" or nyctinastic movement.
             </p>
             <button>Buy now</button>
           </div>
           <div className='feature_img'>
-            <img src={featured} className='feature_img' alt='featured flower' />
+            <img src={img10} className='feature_img' alt='featured flower' />
           </div>
           <div className='feature_price'>
             <p>price </p>
@@ -152,14 +158,14 @@ export const Content = () => {
           </div>
         </div>
       </div>
-      <div className='join_planthome'>
+      <div className='join_planthome' id='contact'>
         <div className='join_planthome_text'>
           <p>
             Want to join the plant family for our offer, Care tips and many more
             sent straight to your inbox?
           </p>
         </div>
-        <div className='join_planthome_input'>
+        <div className='join_planthome_input join'>
           <input
             type='text'
             size='40'
